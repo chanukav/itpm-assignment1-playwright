@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:ui:debug": "playwright test --ui --debug",
+    "test:ui:debug:open": "playwright test --ui --debug --open",
+    "test:ui:debug:open:trace": "playwright test --ui --debug --open --trace",
+    "report": "playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

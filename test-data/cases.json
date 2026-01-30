@@ -1,0 +1,14 @@
+[
+    {
+        "id": "Pos_Fun_0001",
+        "name": "Short polite request with question mark",
+        "input": "karuNaakaralaa mata podi udhavvak karanna puluvandha?",
+        "expectType": "nonEmptySinhala"
+    },
+    {
+        "id": "Neg_Fun_0001",
+        "name": "Joined words stress input should not produce unreadable garbage",
+        "input": "mamagedharayanavaa",
+        "expectType": "nonEmptySinhala"
+    }
+]
