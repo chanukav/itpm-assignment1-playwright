@@ -12,7 +12,7 @@ test("Pos_UI_0001 - Output updates in real time while typing", async ({ page }) 
 
     await input.click();
     // Typing with delay triggers real-time translation events
-    await page.keyboard.type("mama gedara yanawa", { delay: 50 });
+    await page.keyboard.type("mama gedara yanava", { delay: 50 });
 
     // Assert that output is not empty, with a generous timeout for network latency
     await expect(output).not.toHaveText("", { timeout: 10000 });

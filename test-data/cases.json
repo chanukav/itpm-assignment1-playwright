@@ -1,14 +1,233 @@
 [
     {
         "id": "Pos_Fun_0001",
-        "name": "Short polite request with question mark",
-        "input": "karuNaakaralaa mata podi udhavvak karanna puluvandha?",
-        "expectType": "nonEmptySinhala"
+        "name": "Convert a simple sentence",
+        "input": "mata hari vehesayi.",
+        "expected": "මට හරි වෙහෙසයි.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0002",
+        "name": "Convert a Compound sentences",
+        "input": "mama adha gamata yanavaa, haebayi vaedi dhavasak inne naehae.",
+        "expected": "මම අද ගමට යනවා, හැබයි වැඩි දවසක් ඉන්නේ නැහැ.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0003",
+        "name": "Convert a Complex sentences",
+        "input": "Mona dhee unath api meeka karamu.",
+        "expected": "මොන දේ උනත් අපි මේක කරමු.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0004",
+        "name": "Convert a interrogative sentence",
+        "input": "kavdha heta ennee?",
+        "expected": "කව්ද හෙට එන්නේ?",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0005",
+        "name": "Convert a  Imperative (command) sentence",
+        "input": "kaeegahanna epaa!",
+        "expected": "කෑගහන්න එපා!",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0006",
+        "name": "Convert a Negative form sentence",
+        "input": "methana aahaara ganne naehae.",
+        "expected": "මෙතන ආහාර ගන්නෙ නැහැ.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0007",
+        "name": "Convert a Greeting form sentence",
+        "input": "suba nava vasarak!",
+        "expected": "සුබ නව වසරක්!",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0008",
+        "name": "Convert a Greeting form sentence",
+        "input": "Oyaata puluvandha mama enakan inna?",
+        "expected": "ඔයාට පුලුවන්ද මම එනකන් ඉන්න?",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0009",
+        "name": "Convert a Respond form sentence",
+        "input": "hari. ikman karalaa enna.",
+        "expected": "හරි. ඉක්මන් කරලා එන්න.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0010",
+        "name": "Convert a Informal sentence",
+        "input": "ehaata veyan.",
+        "expected": "එහාට වෙයන්.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0011",
+        "name": "Convert a day-to-day expression sentence",
+        "input": "Mata badaginiyi.",
+        "expected": "මට බඩගිනියි.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0012",
+        "name": "Convert a multi-world expressions and frequent collection sentence",
+        "input": "meeka nam aeththatama loku avulak.",
+        "expected": "මේක නම් ඇත්තටම ලොකු අවුලක්.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0013",
+        "name": "Convert a proper spacing sentence",
+        "input": "ara aedhuma oyaata gaeLapenavaa.",
+        "expected": "අර ඇදුම ඔයාට ගැළපෙනවා.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0014",
+        "name": "Convert a repeated word expressions uded for emphasis",
+        "input": "eyaa loku loku ganan dhilaa aedhum gannavaa.",
+        "expected": "එයා ලොකු ලොකු ගනන් දිලා ඇදුම් ගන්නවා.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0015",
+        "name": "Covert a past tense sentence",
+        "input": "mama iiyee magee yaluvekge gedhara giyaa.",
+        "expected": "මම ඊයේ මගේ යලුවෙක්ගෙ ගෙදර ගියා.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0016",
+        "name": "Convert a present sentence",
+        "input": "mama haema udheema naanavaa.",
+        "expected": "මම හැම උදේම නානවා.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0017",
+        "name": "Convert a future sentence",
+        "input": "api next week project demo eka present karaavi.",
+        "expected": "අපි next week project demo එක present කරාවි.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0018",
+        "name": "Convert a Name with  Negation (negative form) sentence",
+        "input": "nimeeSha meeting eka attend karannee naehae.",
+        "expected": "නිමේෂ meeting එක attend කරන්නේ නැහැ.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0019",
+        "name": "Convert a numbers + Plural form  sentence",
+        "input": "Lamayi 2:30pm valata thibba lecture eka cancel.",
+        "expected": "ළමයි 2:30pm වලට තිබ්බ lecture එක cancel.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0020",
+        "name": "Convert a Request + Interrogative sentence",
+        "input": "karuNaakaralaa mata meeka poddak explain karanavadha?",
+        "expected": "කරුණාකරලා මට මේක පොඩ්ඩක් explain කරනවද?",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0021",
+        "name": "Convert a English technical/brand  + Interrogative sentence",
+        "input": "eyaalaa Android app eka Play Store ekata publish karanavaa.",
+        "expected": "එයාලා Android app එක Play Store එකට publish කරනවා.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0022",
+        "name": "Convert a Word combination / phrase +  Imperative (command)  sentence",
+        "input": "obee OTP password eka kisivekuta dhiimen vaeLakenna.",
+        "expected": "ඔබේ OTP password එක කිසිවෙකුට දීමෙන් වැළකෙන්න.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0023",
+        "name": "Convert a numbers and past tense sentence",
+        "input": "ohu 24/07/2025 dhina 119kg k bara esaviimen varthaavak pihitevvaa.",
+        "expected": "ඔහු 24/07/2025 දින 119kg ක් බර එසවීමෙන් වර්තාවක් පිහිටෙව්වා.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Pos_Fun_0024",
+        "name": "Convert a paragraph with  Names / places / common English words and Compound sentence",
+        "input": "University life at SLIIT hari lively saha challenging athdhaekiimak. Api lectures, labs saha assignments manage karagena yanna oona, namuth yaluvoo ekka campus ekee spend karana time eka hari enjoyable. Group projects valadhi teamwork saha communication skills godak develop venavaa, saha exams kaalayeedhi discipline eka godak oona venavaa. Ehema uNath, events, clubs saha campus activities nisaa SLIIT university life eka memorable experience ekak venavaa.",
+        "expected": "University life at SLIIT හරි lively සහ challenging අත්දැකීමක්. අපි lectures, labs සහ assignments manage කරගෙන යන්න ඕන, නමුත් යලුවෝ එක්ක campus එකේ spend කරන time එක හරි enjoyable. Group projects වලදි teamwork සහ communication skills ගොඩක් develop වෙනවා, සහ exams කාලයේදි discipline එක ගොඩක් ඕන වෙනවා. එහෙම උණත්, events, clubs සහ campus activities නිසා SLIIT university life එක memorable experience එකක් වෙනවා.",
+        "expectType": "exact"
     },
     {
         "id": "Neg_Fun_0001",
-        "name": "Joined words stress input should not produce unreadable garbage",
-        "input": "mamagedharayanavaa",
-        "expectType": "nonEmptySinhala"
+        "name": "Covert a Excess punctuation spam",
+        "input": "asdj#@! 1234 qwe__ %%!! Zz",
+        "expected": "asdj#@! 1234 qwe__ %%!! Zz",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0002",
+        "name": "Covert a Real‑time transliteration after word termination",
+        "input": "mage nama",
+        "expected": "මගේ නම",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0003",
+        "name": "Convert a email address",
+        "input": "Nadunperara@gmail.com",
+        "expected": "Nadunperara@gmail.com",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0004",
+        "name": "Convert a email address",
+        "input": "https://www.helakuru.lk",
+        "expected": "https://www.helakuru.lk",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0006",
+        "name": "Mixed Sinhala + Singlish",
+        "input": "මම tomorrow class යන්නෙ.",
+        "expected": "මම tomorrow class යන්නෙ.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0007",
+        "name": "Case‑insensitive translation",
+        "input": "MAMA GEDARA YANAWA",
+        "expected": "මම ගෙදර යනවා",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0008",
+        "name": "Case‑insensitive translation",
+        "input": " OR 1=1; DROP TABLE users; --",
+        "expected": "The translator should either leave unsupported characters untouched or inform the user that the input cannot be converted.",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0009",
+        "name": "Covert a long paragraph with line breaking",
+        "input": "Mama adha dina mama thaththa amma la samaga nuwara eliyata train eken gihin. Train journey eka onekama sundara, hills tea estates tunnels waterfalls sabha balala enna rasa wadi. Ella awith api nine arch bridge eka balanna giya, eka loku engineering marvel ekak, photos videos onekama gaththa tourists la samaga. Ehen little adam's peak climb karala top eken view eka breathtaking, clouds walata wada hemin bala inna wage, wind eka strong, cool weather nisa jacket atha, tired una but worth it. Ehen ravum eka hotel ekedi check in karala rest gaththa, night eka dinner eka rice and curry with many side dishes, rasa wadi, kewa atara stories kiyala inna. Next day api kandy yanawa, dalada maligawa balanna, temple eka peaceful, buddha ge datha tiyenne kiyala history ganna interesting, devotees la flowers pahan samaga worship karanawa balala inna. Ehen peradeniya botanical garden giya, flowers orchids spices trees onekama varieties, monkeys innawa careful bags walata, large bat trees amazing. Ehen sigiriya rock fortress climb karanna start karala, steps onekama, halfway eke frescoes beautiful ancient paintings, mirror wall eke old writings, top eken 360 view loku, ancient palace ruins, lion entrance historical. Kashyapa raja ge story kiyala guide kiyana eka listen karala interesting. Ehen dambulla cave temple, caves walata large buddha statues reclining sitting, wall paintings colorful ancient, peaceful atmosphere. Ehen beach side ekata enna unawatuna or mirissa, sea eka blue, waves swim karanna perfect, snorkeling karala fish balala, sunset eka sundara, seafood dinner fresh grilled fish prawns. Holiday eka throughout nature culture history food sabha mix, family la time spend karala onekama memories, sri lanka eka travel karanna best destination ekak, oyatath enna onalu, oyage experience eka unforgettable wenna puluwan.        Mama adha dina mama thaththa amma la samaga nuwara eliyata train eken gihin. Train journey eka onekama sundara, hills tea estates tunnels waterfalls sabha balala enna rasa wadi. Ella awith api nine arch bridge eka balanna giya, eka loku engineering marvel ekak, photos videos onekama gaththa tourists la samaga. Ehen little adam's peak climb karala top eken view eka breathtaking, clouds walata wada hemin bala inna wage, wind eka strong, cool weather nisa jacket atha, tired una but worth it. Ehen ravum eka hotel ekedi check in karala rest gaththa, night eka dinner eka rice and curry with many side dishes, rasa wadi, kewa atara stories kiyala inna. Next day api kandy yanawa, dalada maligawa balanna, temple eka peaceful, buddha ge datha tiyenne kiyala history ganna interesting, devotees la flowers pahan samaga worship karanawa balala inna. Ehen peradeniya botanical garden giya, flowers orchids spices trees onekama varieties, monkeys innawa careful bags walata, large bat trees amazing. Ehen sigiriya rock fortress climb karanna start karala, steps onekama, halfway eke frescoes beautiful ancient paintings, mirror wall eke old writings, top eken 360 view loku, ancient palace ruins, lion entrance historical. Kashyapa raja ge story kiyala guide kiyana eka listen karala interesting. Ehen dambulla cave temple, caves walata large buddha statues reclining sitting, wall paintings colorful ancient, peaceful atmosphere. Ehen beach side ekata enna unawatuna or mirissa, sea eka blue, waves swim karanna perfect, snorkeling karala fish balala, sunset eka sundara, seafood dinner fresh grilled fish prawns. Holiday eka throughout nature culture history food sabha mix, family la time spend karala onekama memories, sri lanka eka travel karanna best destination ekak, oyatath enna onalu, oyage experience eka unforgettable wenna puluwan.        ",
+        "expected": "Converted Two sinhala paragraph",
+        "expectType": "exact"
+    },
+    {
+        "id": "Neg_Fun_0010",
+        "name": "Covert a simple",
+        "input": "mamabathkaeevaa.",
+        "expected": "මම බත් කෑවා.",
+        "expectType": "exact"
     }
 ]
