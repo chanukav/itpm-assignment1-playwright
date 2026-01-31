@@ -63,8 +63,14 @@ async function exportResults(results = []) {
             const row = worksheet.addRow(rowData);
 
             // Style the new row slightly to match common Excel expectations (vertical align center, wrap text)
-            row.eachCell({ includeEmpty: true }, (cell) => {
-                cell.alignment = { wrapText: true, vertical: 'middle', horizontal: 'left' };
+            row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
+                let horizontal = 'left';
+                // Center align specific columns: TC ID (1), Input length type (3), Status (7)
+                if ([1, 3, 7].includes(colNumber)) {
+                    horizontal = 'center';
+                }
+
+                cell.alignment = { wrapText: true, vertical: 'top', horizontal: horizontal };
                 cell.border = {
                     top: { style: 'thin' },
                     left: { style: 'thin' },
