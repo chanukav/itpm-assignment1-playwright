@@ -7,15 +7,40 @@ test.describe("SwiftTranslator Singlish -> Sinhala (Negative)", () => {
     });
 
     for (const tc of cases as any[]) {
-        test(`${tc.id} - ${tc.name}`, async ({ page }) => {
+        test(`${tc.id} - ${tc.name}`, async ({ page }, testInfo) => {
+            // Add metadata for reporter
+            testInfo.annotations.push({ type: 'input', description: tc.input });
+            testInfo.annotations.push({ type: 'expected', description: tc.expected });
+            // Add coverage annotation strictly for Negative tests
+            testInfo.annotations.push({ type: 'coverage', description: "Negative Scenario" });
+
             // Use robust selectors identified from UI testing
             const input = page.getByRole("textbox");
-            await input.fill(tc.input);
+            // Smart Input Strategy
+            await input.click();
+            await input.clear();
+
+            const threshold = 60;
+            if (tc.input.length < threshold) {
+                await input.pressSequentially(tc.input, { delay: 50 });
+            } else {
+                const splitIndex = tc.input.length - 20;
+                const prefix = tc.input.slice(0, splitIndex);
+                const suffix = tc.input.slice(splitIndex);
+
+                await input.fill(prefix);
+                await input.pressSequentially(suffix, { delay: 50 });
+            }
 
             if (tc.expectType === "uiComponent" && tc.locator) {
                 const uiElement = page.locator(tc.locator);
                 await expect(uiElement).toBeVisible();
                 await expect(uiElement).toContainText(tc.expected);
+
+                // For UI component tests, the "actual" is that the element is visible/contains text
+                // We can capture the text content of the element as "actual"
+                const actualText = await uiElement.innerText();
+                await testInfo.attach('actual', { body: actualText, contentType: 'text/plain' });
                 return;
             }
 
@@ -24,9 +49,17 @@ test.describe("SwiftTranslator Singlish -> Sinhala (Negative)", () => {
             const output = page.locator('.card').filter({ hasText: 'Sinhala' }).locator('.whitespace-pre-wrap');
 
             // Wait for real-time output to appear
-            await expect(output).not.toHaveText("", { timeout: 10000 });
+            if (tc.expectType === "exact" || tc.expectType === "passthrough") {
+                // For exact/passthrough, wait for the expected text
+                const expectedText = tc.expectType === "passthrough" ? tc.input : tc.expected;
+                await expect(output).toHaveText(expectedText, { timeout: 20000 });
+            } else {
+                await expect(output).not.toHaveText("", { timeout: 15000 });
+            }
 
             const actual = (await output.innerText()).trim();
+
+            await testInfo.attach('actual', { body: actual, contentType: 'text/plain' });
 
             if (tc.expectType === "exact") {
                 expect(actual).toBe(tc.expected);
